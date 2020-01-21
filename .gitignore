@@ -1,3 +1,4 @@
 data/*.db3
 .DS_Store
 node_modules/
+.env
