@@ -9,19 +9,19 @@ module.exports = {
 };
 
 function find() {
-  return db('users').select('id', 'username');
+  return db('users').select('id', 'username', 'department');
 }
 
 function findBy(filter) {
   return db('users')
     .where(filter)
-    .select('id', 'username', 'password');
+    .select('id', 'username', 'department');
 }
 
 function findById(id) {
   return db('users')
     .where({ id })
-    .select('id', 'username')
+    .select('id', 'username', 'department')
     .first();
 }
 
