@@ -14,9 +14,13 @@ router.post('/register', async (req, res) => {
   if (!req.body.password) {
     res.status(400).json({ message: 'password required' });
   }
+  if (!req.body.department) {
+    res.status(400).json({ message: 'department required please' });
+  }
   const newUser = {
     username: req.body.username,
     password: req.body.password,
+    department: req.body.department,
   };
   try {
     const user = await userDb.add(newUser);
